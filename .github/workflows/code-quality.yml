@@ -27,7 +27,7 @@ jobs:
             build-mode: manual
     steps:
       - uses: actions/checkout@v4
-      - uses: github/codeql-action/init@v3
+      - uses: github/codeql-action/init@v4
         with:
           languages: ${{ matrix.language }}
           build-mode: ${{ matrix.build-mode }}
@@ -37,6 +37,6 @@ jobs:
         run: |
           cmake . -B ./build -D LIBD4_BUILD_EXAMPLES=ON -D LIBD4_BUILD_TESTS=ON -D LIBD4_SANITIZER=ON
           cmake --build build --config Debug
-      - uses: github/codeql-action/analyze@v3
+      - uses: github/codeql-action/analyze@v4
         with:
           category: /language:${{matrix.language}}
