@@ -32,7 +32,7 @@ jobs:
       - run: ctest --output-on-failure --test-dir coverage
       - run: lcov --branch-coverage --capture -d coverage -o coverage/test.info --exclude 'test/*'
       - run: genhtml -o coverage/html coverage/test.info
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: coverage-data
           path: coverage/html
