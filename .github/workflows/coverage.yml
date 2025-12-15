@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: thelang-io/setup-the@v1
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         with:
           path: |
             coverage/openssl
